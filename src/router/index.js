@@ -1,8 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store'
 import Home from '../views/Home.vue'
 
 Vue.use(Router)
+
+const ifNotAuthenticated = (to, from, next) => {
+  if (!store.getters.isAuthenticated) {
+    next()
+    return
+  }
+  next('/')
+}
+
+const ifAuthenticated = (to, from, next) => {
+  if (store.getters.isAuthenticated) {
+    next()
+    return
+  }
+  next('/login')
+}
 
 export default new Router({
   mode: 'history',
@@ -24,10 +41,14 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+      component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+      beforeEnter: ifNotAuthenticated
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue'),
+      beforeEnter: ifAuthenticated
     }
   ],
   scrollBehavior (to, from, savedPosition) {
