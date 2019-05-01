@@ -18,6 +18,24 @@
       >
         Login
       </v-btn>
+      <v-btn
+        flat
+        to="/signup"
+      >
+        Sign Up
+      </v-btn>
+      <v-btn
+        flat
+        to="/profile"
+      >
+        Profile
+      </v-btn>
+      <v-btn
+        flat
+        to="/logout"
+      >
+        Logout
+      </v-btn>
     </v-toolbar>
 
     <v-content>

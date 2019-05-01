@@ -45,10 +45,33 @@ export default new Router({
       beforeEnter: ifNotAuthenticated
     },
     {
+      path: '/signup',
+      name: 'signup',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue'),
+      beforeEnter: ifNotAuthenticated
+    },
+    {
+      path: '/forgot-password',
+      name: 'forgot password',
+      component: () => import(/* webpackChunkName: "about" */ '../views/ForgotPassword.vue'),
+      beforeEnter: ifNotAuthenticated
+    },
+    {
+      path: '/reset-password',
+      name: 'reset password',
+      component: () => import(/* webpackChunkName: "about" */ '../views/ResetPassword.vue'),
+      beforeEnter: ifNotAuthenticated
+    },
+    {
+      path: '/activate-account',
+      name: 'activate account',
+      component: () => import(/* webpackChunkName: "about" */ '../views/ActivateAccount.vue')
+    },
+    {
       path: '/profile',
       name: 'profile',
       component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue'),
-      beforeEnter: ifAuthenticated
+      // beforeEnter: ifAuthenticated
     }
   ],
   scrollBehavior (to, from, savedPosition) {
