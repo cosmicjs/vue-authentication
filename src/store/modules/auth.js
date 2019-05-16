@@ -44,6 +44,8 @@ const actions = {
   [AUTH_SIGNUP]: ({ commit }, user) => {
     return new Promise((resolve, reject) => {
       commit(AUTH_REQUEST)
+      //  POST JSON: { fullname: '', email: '', password: ''}
+      // ROOT/.netlify/functions/CreateNewUser
       // Create User Account
       // axios({ url: api_routes.user.signup, data: user, method: "post" })
       //   .then(resp => {

@@ -11,6 +11,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "cosmicjs": "^3.2.17",
+    "nodemailer": "^6.1.1",
     "password-hash-and-salt": "^0.1.4",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",

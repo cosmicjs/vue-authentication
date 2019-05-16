@@ -1,4 +1,5 @@
 const password = require('password-hash-and-salt');
+const Cosmic = require('cosmicjs');
 
 exports.handler = function(event, context, callback) {
   if (event.httpMethod != 'POST') {
