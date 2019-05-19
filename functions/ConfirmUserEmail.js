@@ -1,4 +1,4 @@
-const Cosmic = require('cosmisjs')();
+const Cosmic = require('cosmicjs')();
 
 exports.handler = function(event, context, callback) {
   callback(null, {

@@ -7,6 +7,7 @@ import {
   AUTH_LOGOUT
 } from "@/store/actions/auth"
 import router from "./../../router";
+import axios from 'axios'
 
 const state = {
   token: localStorage.getItem('user-token') || '',
@@ -23,6 +24,7 @@ const actions = {
   [AUTH_REQUEST]: ({ commit, dispatch }, user) => {
     return new Promise((resolve, reject) => {
       // Login request
+
       commit(AUTH_REQUEST);
       // apiCall({ url: api_routes.user.login, data: user, method: "post" })
       //   .then(resp => {
@@ -44,6 +46,9 @@ const actions = {
   [AUTH_SIGNUP]: ({ commit }, user) => {
     return new Promise((resolve, reject) => {
       commit(AUTH_REQUEST)
+      axios.post('/.netlify/functions/CreateNewUser', user).then(res => {
+        console.log(res)
+      })
       //  POST JSON: { fullname: '', email: '', password: ''}
       // ROOT/.netlify/functions/CreateNewUser
       // Create User Account
