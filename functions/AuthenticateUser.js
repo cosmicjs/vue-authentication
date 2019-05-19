@@ -1,5 +1,10 @@
 const password = require('password-hash-and-salt');
 const Cosmic = require('cosmicjs');
+const database = Cosmic.bucket({
+  slug: 'cosmic-vueauth',
+  write_key: 'tJ4YxwhYgatffh4WAVEJiDZ9T7pRJPpMVOekTUuKROS2crlDRI',
+  read_key: 'xDF5EHQ5KgcWdsEc5PxCTLicSuSX839HJejXsg1jJ57ZF1ixVy'
+})
 
 exports.handler = function(event, context, callback) {
   if (event.httpMethod != 'POST') {
