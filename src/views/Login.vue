@@ -11,14 +11,14 @@
             </v-toolbar>
             <v-card-text>
               <v-form>
-                <v-text-field prepend-icon="mdi-email" name="login-email" label="Email" type="text"></v-text-field>
-                <v-text-field prepend-icon="mdi-lock" name="password" label="Password" id="password" type="password"></v-text-field>
+                <v-text-field prepend-icon="mdi-email" name="login-email" label="Email" type="text" v-model="login.email" required></v-text-field>
+                <v-text-field prepend-icon="mdi-lock" name="password" label="Password" id="password" type="password" v-model="login.password" required></v-text-field>
               </v-form>
             </v-card-text>
             <v-card-actions>
               <v-btn color="primary" flat to="/forgot-password">Forgot Password?</v-btn>
               <v-spacer></v-spacer>
-              <v-btn color="primary">Login</v-btn>
+              <v-btn color="primary" @click="onLogin">Login</v-btn>
             </v-card-actions>
           </v-card>
       </v-form>

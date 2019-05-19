@@ -24,8 +24,12 @@ const actions = {
   [AUTH_REQUEST]: ({ commit, dispatch }, user) => {
     return new Promise((resolve, reject) => {
       // Login request
-
       commit(AUTH_REQUEST);
+      axios.post('https://v-cosmic-auth.netlify.com/.netlify/functions/AuthenticateUser', user).then(res => {
+        console.log(res);
+      }).catch(err => {
+        console.log(err)
+      })
       // apiCall({ url: api_routes.user.login, data: user, method: "post" })
       //   .then(resp => {
       //     localStorage.setItem("user-token", resp.token);
@@ -46,8 +50,16 @@ const actions = {
   [AUTH_SIGNUP]: ({ commit }, user) => {
     return new Promise((resolve, reject) => {
       commit(AUTH_REQUEST)
-      axios.post('/.netlify/functions/CreateNewUser', user).then(res => {
+      axios.post('https://v-cosmic-auth.netlify.com/.netlify/functions/CreateNewUser', user).then(res => {
         console.log(res)
+        if (res.status == 200) {
+          commit(AUTH_SUCCESS)
+          router.push('/profile')
+        } else {
+          commit(AUTH_ERROR)
+        }
+      }).catch(err => {
+        console.log(err)
       })
       //  POST JSON: { fullname: '', email: '', password: ''}
       // ROOT/.netlify/functions/CreateNewUser
@@ -78,7 +90,7 @@ const mutations = {
   },
   [AUTH_SUCCESS]: (state, res) => {
     state.status = "success"
-    state.token = res.token
+    state.token = res.data.metadata.token
     state.hasLoadedOnce = true
     Event.$emit("user-authenticated")
   },

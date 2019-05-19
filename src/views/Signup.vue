@@ -51,8 +51,7 @@ export default {
       v => /.+@.+/.test(v) || 'E-mail must be valid'
     ],
     confirmPass: [
-      v => !!v || 'This field is required',
-      v => (v == this.signUp.password) || 'Passwords doesn\'t match'
+      v => !!v || 'This field is required'
     ],
     passRules: [
       v => !!v || 'Password is required',
