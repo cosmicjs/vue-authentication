@@ -38,7 +38,8 @@ exports.handler = function(event, context, callback) {
           email: bodyJSON.email,
           password: bodyJSON.password,
           hash: '',
-          token: ''
+          token: '',
+          email_verified: false
         }
 
         password(newUser.password).hash(function(error, hash) {
@@ -72,6 +73,12 @@ exports.handler = function(event, context, callback) {
                 key: 'token',
                 type: 'text',
                 value: newUser.token
+              },
+              {
+                key: 'email_verified',
+                type: 'radio-buttons',
+                "value": "false",
+                "options": [{"value": "true"}, {"value": "false"}]
               }
             ]
           }
@@ -99,7 +106,7 @@ exports.handler = function(event, context, callback) {
               console.log(res)
               callback(null, {
                 statusCode: 200,
-                body: JSON.stringify(data)
+                body: JSON.stringify(data.object)
               });
             })
             .catch(err => {

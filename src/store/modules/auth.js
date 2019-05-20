@@ -12,7 +12,8 @@ import axios from 'axios'
 const state = {
   token: localStorage.getItem('user-token') || '',
   status: '',
-  hasLoadedOnce: false
+  hasLoadedOnce: false,
+  profile: null
 }
 
 const getters = {
@@ -25,9 +26,15 @@ const actions = {
     return new Promise((resolve, reject) => {
       // Login request
       commit(AUTH_REQUEST);
-      axios.post('https://v-cosmic-auth.netlify.com/.netlify/functions/AuthenticateUser', user).then(res => {
+      axios.post('http://localhost:9000/.netlify/functions/AuthenticateUser', user).then(res => {
         console.log(res);
+        commit(AUTH_SUCCESS, res.data);
+        localStorage.setItem("user-token", res.data.metadata.token);
+        localStorage.setItem("user", res.data.metadata);
       }).catch(err => {
+        commit(AUTH_ERROR, err);
+        localStorage.removeItem("user-token");
+        reject(err);
         console.log(err)
       })
       // apiCall({ url: api_routes.user.login, data: user, method: "post" })
@@ -90,9 +97,8 @@ const mutations = {
   },
   [AUTH_SUCCESS]: (state, res) => {
     state.status = "success"
-    state.token = res.data.metadata.token
+    state.profile = res
     state.hasLoadedOnce = true
-    Event.$emit("user-authenticated")
   },
   [AUTH_ERROR]: state => {
     state.status = "error"
@@ -100,6 +106,7 @@ const mutations = {
   },
   [AUTH_LOGOUT]: state => {
     state.token = ""
+    state.profile = null
   }
 }
 

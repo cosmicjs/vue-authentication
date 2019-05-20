@@ -18,7 +18,7 @@
               <v-text-field prepend-icon="lock"
               name="password" label="Password" id="password" type="password" v-model="signUp.password" :rules="passRules" required></v-text-field>
               <v-text-field prepend-icon="lock"
-              name="password" label="Repeat Password" id="repeat-password" type="password" v-model="confirmpass" :rules="[comparePasswords]" required></v-text-field>
+              name="password" label="Repeat Password" id="repeat-password" type="password" v-model="confirmpass" :rules="comparePasswords" required></v-text-field>
             </v-form>
           </v-card-text>
           <v-card-actions>
@@ -60,13 +60,17 @@ export default {
   }),
   computed: {
     comparePasswords () {
-      return this.signUp.password !== this.confirmPass ? 'Passwords do not match' : true
+      return [
+        v => (v === this.signUp.password) ? true : 'Passwords do not match',
+        v => !!v || 'This field is required'
+      ]
     }
   },
   methods: {
     onSignup () {
-      this.$refs.form.validate()
-      this.$store.dispatch('AUTH_SIGNUP', this.signUp)
+      if (this.$refs.form.validate()) {
+        this.$store.dispatch('AUTH_SIGNUP', this.signUp)
+      }
     }
   }
 }

@@ -18,7 +18,7 @@
           <v-card-actions>
 
             <v-spacer></v-spacer>
-            <v-btn color="red lighten-1" dark>Logout</v-btn>
+            <v-btn color="red lighten-1" dark @click="onLogout">Logout</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -31,7 +31,12 @@ export default {
   data: () => ({
     username: 'john doe',
     email: 'john@doe.com'
-  })
+  }),
+  methods: {
+    onLogout () {
+      this.$store.dispatch('AUTH_LOGOUT')
+    }
+  }
 }
 </script>
 

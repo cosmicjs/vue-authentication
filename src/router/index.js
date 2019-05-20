@@ -71,7 +71,7 @@ export default new Router({
       path: '/profile',
       name: 'profile',
       component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue'),
-      // beforeEnter: ifAuthenticated
+      beforeEnter: ifAuthenticated
     }
   ],
   scrollBehavior (to, from, savedPosition) {
