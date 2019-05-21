@@ -36,41 +36,41 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+      component: () => import('../views/About.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+      component: () => import('../views/Login.vue'),
       beforeEnter: ifNotAuthenticated
     },
     {
       path: '/signup',
       name: 'signup',
-      component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue'),
+      component: () => import('../views/Signup.vue'),
       beforeEnter: ifNotAuthenticated
     },
     {
       path: '/forgot-password',
       name: 'forgot password',
-      component: () => import(/* webpackChunkName: "about" */ '../views/ForgotPassword.vue'),
+      component: () => import('../views/ForgotPassword.vue'),
       beforeEnter: ifNotAuthenticated
     },
     {
       path: '/reset-password',
       name: 'reset password',
-      component: () => import(/* webpackChunkName: "about" */ '../views/ResetPassword.vue'),
+      component: () => import('../views/ResetPassword.vue'),
       beforeEnter: ifNotAuthenticated
     },
     {
       path: '/activate-account',
       name: 'activate account',
-      component: () => import(/* webpackChunkName: "about" */ '../views/ActivateAccount.vue')
+      component: () => import('../views/ActivateAccount.vue')
     },
     {
       path: '/profile',
       name: 'profile',
-      component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue'),
+      component: () => import('../views/Profile.vue'),
       beforeEnter: ifAuthenticated
     }
   ],

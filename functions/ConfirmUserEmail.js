@@ -22,32 +22,93 @@ exports.handler = function(event, context, callback) {
     metafield_key: 'token',
     metafield_value: bodyJSON.token
   }).then(UserList => {
-    if (UserList.total == 1) {
+    if (UserList.total > 0) {
       const User = {...UserList.objects[0]}
-      console.log(User.slug)
-      database.editObject({
-        slug: User.slug,
-        metafields: [
+      const meta = User.metadata
+  if (meta.email_verified == true) {
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({success: true})
+    });
+  } else {
+    const updatedMeta = [
+      {
+        "key": "full_name",
+        "type": "text",
+        "value": meta.full_name,
+        "title": "full_name",
+        "has_length_edit": true,
+        "parent": false,
+        "children": false
+      },
+      {
+        "key": "email",
+        "type": "text",
+        "value": meta.email,
+        "title": "email",
+        "has_length_edit": true,
+        "parent": false,
+        "children": false
+      },
+      {
+        "key": "password",
+        "type": "text",
+        "value": meta.password,
+        "title": "password",
+        "has_length_edit": true,
+        "parent": false,
+        "children": false
+      },
+      {
+        "key": "token",
+        "type": "text",
+        "value": meta.token,
+        "title": "token",
+        "has_length_edit": true,
+        "parent": false,
+        "children": false
+      },
+      {
+        "key": "email_verified",
+        "type": "radio-buttons",
+        "value": "true",
+        "options": [
           {
-            key: 'email_verified',
-            type: 'radio-buttons',
             "value": "true",
-            "options": [{"value": "true"}, {"value": "false"}]
+            "checked": 1
+          },
+          {
+            "value": "false",
+            "checked": 0
           }
-        ]
-      }).then(updatedUser => {
-        callback(null, {
-          statusCode: 200,
-          body: 'Email confirmed!'
-        });
-      }).catch(err => {
-        console.log(err)
-      })
-      // edit object using slug from search
+        ],
+        "title": "email_verified",
+        "has_length_edit": false,
+        "parent": false,
+        "object": true,
+        "radio-buttons": true,
+        "options_string": [{"value":"true"},{"value":"false"}],
+        "children": false
+      }
+    ]
+    // console.log(updatedMeta)
+    database.editObject({
+      slug: User.slug,
+      metafields: updatedMeta
+    }).then(updatedUser => {
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify(User)
-      })
+        body: JSON.stringify({success: true})
+      });
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+      // edit object using slug from search
+      // callback(null, {
+      //   statusCode: 200,
+      //   body: JSON.stringify(User)
+      // })
 
     } else {
       // USER DOESNOT EXIST
