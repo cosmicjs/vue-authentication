@@ -1,12 +1,7 @@
 const password = require('password-hash-and-salt');
 const crypto = require('crypto');
 const nodemailer = require("nodemailer");
-const Cosmic = require('cosmicjs')();
-const database = Cosmic.bucket({
-  slug: 'cosmic-vueauth',
-  write_key: 'tJ4YxwhYgatffh4WAVEJiDZ9T7pRJPpMVOekTUuKROS2crlDRI',
-  read_key: 'xDF5EHQ5KgcWdsEc5PxCTLicSuSX839HJejXsg1jJ57ZF1ixVy'
-})
+import database from '../src/cosmic'
 
 // USER SCHEMA
 //{"title":"john@doe.com","content":"",

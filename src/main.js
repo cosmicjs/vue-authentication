@@ -6,14 +6,9 @@ import store from './store'
 
 Vue.config.productionTip = false
 
-// SET AXIOS AUTH HEADER
-// const token = localStorage.getItem('user-token')
-// if (token) {
-//   axios.defaults.headers.common['Authorization'] = token
-// }
-
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created: () => {console.log(process.env.BUCKET);}
 }).$mount('#app')

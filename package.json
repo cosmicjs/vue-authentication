@@ -12,6 +12,7 @@
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "cosmicjs": "^3.2.17",
+    "dotenv-webpack": "^1.7.0",
     "nodemailer": "^6.1.1",
     "password-hash-and-salt": "^0.1.4",
     "vue": "^2.6.10",
