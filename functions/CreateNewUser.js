@@ -72,8 +72,8 @@ exports.handler = function(event, context, callback) {
               {
                 key: 'email_verified',
                 type: 'radio-buttons',
-                "value": "false",
-                "options": [{"value": "true"}, {"value": "false"}]
+                "value": false,
+                "options": [{"value": true}, {"value": false}]
               }
             ]
           }
@@ -86,8 +86,8 @@ exports.handler = function(event, context, callback) {
                 from: 'sender@server.com',
                 to: data.object.metadata.email,
                 subject: 'Verify Your Email',
-                text: `Please Verify your email using this URL: ${data.object.metadata.token}`,
-                html: `<p>Please Verify your email using this URL: ${data.object.metadata.token}</p>`
+                text: `Please Verify your email using this URL: https://v-cosmic-auth.netlify.com/activate-account?token=${data.object.metadata.token}`,
+                html: `<p>Please Verify your email using this link: <a href="https://v-cosmic-auth.netlify.com/activate-account?token=${data.object.metadata.token}">Click Here</a></p>`
             };
 
             let transporter = nodemailer.createTransport({

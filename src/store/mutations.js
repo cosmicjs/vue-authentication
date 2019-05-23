@@ -12,6 +12,7 @@ export default {
   [AUTH_SUCCESS]: (state, res) => {
     state.authStatus = "success"
     state.profile = res
+    state.token = res.metadata.token
     state.hasLoadedOnce = true
   },
   [AUTH_ERROR]: state => {
@@ -19,7 +20,9 @@ export default {
     state.hasLoadedOnce = true
   },
   [AUTH_LOGOUT]: state => {
+    state.authStatus = ""
     state.token = ""
-    state.profile = null
+    state.profile = {}
+    state.hasLoadedOnce = false
   }
 }

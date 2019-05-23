@@ -18,7 +18,7 @@ exports.handler = function(event, context, callback) {
     }).then(UserList => {
       if (UserList.total == 1) {
         const User = {...UserList.objects[0]}
-        console.log(User.metadata)
+        // console.log('user:', User)
         callback(null, {
           statusCode: 200,
           body: JSON.stringify(User)
@@ -27,7 +27,7 @@ exports.handler = function(event, context, callback) {
         // USER DOESNOT EXIST
         callback(null, {
          statusCode: 204,
-         body: "No account exists with this email"
+         body: "No account exists with this token"
        });
       } // end if user exists conditional
     }).catch(err => {

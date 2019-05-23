@@ -17,9 +17,11 @@ export default {
       // Login request
       commit(AUTH_REQUEST);
       axios.post(settings.API_SERVER+'.netlify/functions/AuthenticateUser', user).then(res => {
-        console.log(res);
-        commit(AUTH_SUCCESS, res.data);
-        localStorage.setItem("user-token", res.data.metadata.token);
+        if (res.status == 200) {
+          commit(AUTH_SUCCESS, res.data);
+          localStorage.setItem("user-token", res.data.metadata.token);
+          router.push('profile');
+        }
         resolve(res);
       }).catch(err => {
         commit(AUTH_ERROR, err);
@@ -51,9 +53,9 @@ export default {
   [AUTH_LOGOUT]: ({ commit }) => {
     return new Promise(resolve => {
       // Sign out user
-      commit(AUTH_LOGOUT)
       localStorage.removeItem('user-token')
-      router.push('/login')
+      commit(AUTH_LOGOUT)
+      router.push('login')
       resolve()
     })
   },

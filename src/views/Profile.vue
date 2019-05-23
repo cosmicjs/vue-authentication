@@ -9,10 +9,10 @@
             <v-icon large>mdi-account</v-icon>
           </v-toolbar>
           <v-card-text>
-            <v-form>
-              <v-text-field prepend-icon="mdi-account" name="name" label="Name" type="text" v-model="this.username"></v-text-field>
-              <v-text-field prepend-icon="mdi-email" name="login-email" label="Email" type="text" v-model="this.email"></v-text-field>
-              <v-btn color="warning">Change Password</v-btn>
+            <v-form v-if="this.getProfile.metadata">
+              <v-text-field prepend-icon="mdi-account" name="name" label="Name" type="text" v-model="this.getProfile.metadata.full_name"></v-text-field>
+              <v-text-field prepend-icon="mdi-email" name="login-email" label="Email" type="text" v-model="this.getProfile.metadata.email"></v-text-field>
+              <v-checkbox :input-value="isVerified" value readonly :label="emailVerified"></v-checkbox>
             </v-form>
           </v-card-text>
           <v-card-actions>
@@ -27,11 +27,25 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   data: () => ({
-    username: 'john doe',
-    email: 'john@doe.com'
+    //username: 'john doe',
+    //email: 'john@doe.com'
   }),
+  computed: {
+    ...mapGetters([
+      'getProfile',
+      'isVerified'
+    ]),
+    emailVerified () {
+      if (this.$store.getters.isVerified) {
+        return 'Email verified!'
+      } else {
+        return 'Email is not verified!'
+      }
+    }
+  },
   methods: {
     onLogout () {
       this.$store.dispatch('AUTH_LOGOUT')
