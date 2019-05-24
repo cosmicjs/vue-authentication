@@ -10,7 +10,7 @@ import {
 // import { settings } from "@/settings"
 import router from "../router";
 import axios from 'axios'
-const API_SERVER = process.env.VUE_APP_API_HOST
+const API_SERVER = process.env.VUE_APP_API_HOST || "https://v-cosmic-auth.netlify.com/"
 
 export default {
   [AUTH_REQUEST]: ({ commit, dispatch }, user) => {
