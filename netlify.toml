@@ -15,3 +15,7 @@
   command = "npm run build"
   # Directory with the serverless Lambda functions to deploy to AWS.
   functions = "lambda"
+
+  [context.production.environment]
+    VUE_APP_NAME = "V Cosmic Auth"
+    VUE_API_HOST = "https://v-cosmic-auth.netlify.com/"
