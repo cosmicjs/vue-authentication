@@ -3,15 +3,6 @@ const crypto = require('crypto');
 const nodemailer = require("nodemailer");
 import database from '../src/cosmic'
 
-// USER SCHEMA
-//{"title":"john@doe.com","content":"",
-//"metafields":[
-// {"required":true,"value":"john doe","key":"full_name","title":"Full Name","type":"text","children":false,"has_length_edit":true,"parent":false},
-// {"required":true,"value":"john@doe.com","key":"email","title":"Email","type":"text","children":false,"has_length_edit":true,"parent":false},
-// {"required":true,"value":"pbkdf2$10000$78e9ee25373aa1ec58be855b9cd45300c4f9be902e8068c86281fb38a27bc3cc99e6fdcf0620a8434778e68d054cb7f389296878d733be9191d6f64ff726d169$0c5c9c93215114b9d52dde3d434c9e41a004129b7760bb0c9f42331989962067f60fa7a9e0c723a46c4bad6ef66714cea6f7d9d66860f31da6201e35d72bd5df","key":"password","title":"Password","type":"text","children":false,"has_length_edit":true,"parent":false},
-// {"required":true,"value":"78e9ee25373aa1ec58be855b9cd45300c4f9be902e8068c86281fb38a27bc3cc99e6fdcf0620a8434778e68d054cb7f389296878d733be9191d6f64ff726d169","key":"token","title":"Token","type":"text","children":false,"has_length_edit":true,"parent":false},
-// {"value":"","key":"reset_token","title":"Reset Token","type":"text","children":false,"has_length_edit":true,"parent":false}],"status":"published","created_by":"5a86424c597e406715286ea5"}
-
 exports.handler = function(event, context, callback) {
   if (event.httpMethod !== 'POST') {
     let error = new Error("Method not allowed")

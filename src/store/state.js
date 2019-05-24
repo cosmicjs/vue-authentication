@@ -1,7 +1,5 @@
-import { settings } from "@/settings"
-
 export default {
-  appName: settings.APP_NAME,
+  appName: process.env.APP_NAME,
   token: localStorage.getItem('user-token') || '',
   hasLoadedOnce: false,
   authStatus: '',

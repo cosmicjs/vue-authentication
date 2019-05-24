@@ -18,7 +18,6 @@
 
 <script>
   import axios from 'axios'
-  import {settings} from '../settings'
   export default {
     data: () => ({
       activated: false
@@ -27,14 +26,13 @@
 
     },
     created () {
-      //console.log(settings.API_SERVER+'ConfirmUserEmail?token='+this.$route.query.token)
-      axios.post(settings.API_SERVER+'.netlify/functions/ConfirmUserEmail', {token: this.$route.query.token})
+      axios.post(process.env.API_HOST+'.netlify/functions/ConfirmUserEmail', {token: this.$route.query.token})
       .then(res => {
         if (res.status == 200) {
           this.activated = true
         }
       }).catch(err => {
-        console.log(err)
+        throw new Error(err)
       })
     }
 
