@@ -9,6 +9,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: h => h(App),
-  created: () => {console.log(process.env.BUCKET);}
+  render: h => h(App)
 }).$mount('#app')

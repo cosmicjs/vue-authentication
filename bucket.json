@@ -1,0 +1,477 @@
+{
+  "bucket": {
+    "_id": "5cc33439d1dc85664c27ffe3",
+    "slug": "cosmic-vueauth",
+    "title": "Cosmic-VueAuth",
+    "object_types": [
+      {
+        "title": "Users",
+        "slug": "users",
+        "singular": "User",
+        "metafields": [
+          {
+            "options": [
+              {
+                "value": "true"
+              },
+              {
+                "value": "false"
+              }
+            ],
+            "value": "",
+            "key": "email_verified",
+            "title": "Email Verified",
+            "type": "radio-buttons",
+            "children": null
+          },
+          {
+            "required": true,
+            "value": "",
+            "key": "full_name",
+            "title": "Full Name",
+            "type": "text",
+            "children": null
+          },
+          {
+            "required": true,
+            "value": "",
+            "key": "email",
+            "title": "Email",
+            "type": "text",
+            "children": null
+          },
+          {
+            "required": true,
+            "value": "",
+            "key": "password",
+            "title": "Password",
+            "type": "text",
+            "children": null
+          },
+          {
+            "required": true,
+            "value": "",
+            "key": "token",
+            "title": "Token",
+            "type": "text",
+            "children": null
+          },
+          {
+            "value": "",
+            "key": "reset_token",
+            "title": "Reset Token",
+            "type": "text",
+            "children": null
+          }
+        ],
+        "options": {
+          "slug_field": 1,
+          "content_editor": 0
+        },
+        "preview_link": "",
+        "priority_locale": null,
+        "localization": false,
+        "locales": null
+      }
+    ],
+    "objects": [
+      {
+        "_id": "5ce714bdd5524453b0e3e21f",
+        "slug": "ulcbtvchdcom",
+        "title": "ulcb@tvchd.com",
+        "content": null,
+        "metafields": [
+          {
+            "key": "full_name",
+            "type": "text",
+            "value": "mynew user",
+            "title": "full_name",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "email",
+            "type": "text",
+            "value": "ulcb@tvchd.com",
+            "title": "email",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "password",
+            "type": "text",
+            "value": "pbkdf2$10000$936b71f79266f998a5889b40d2d8be685b1127093a0ec24f310bbc20eb9c70b1c98ed96b9d29702f0d1c7bb125421e7f426d5b854e85d6ef1ed9bd8984f5674a$f43fee2fbe2ad048feb6e9fa9a2027fc7840c46e5638778488748f0a37e1013a1c4a386295d7e0419584654ab8ced00d5db8e91b4674b4cfa222dc01ed06aa09",
+            "title": "password",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "token",
+            "type": "text",
+            "value": "eb612a08843108d4757551fceed84f7c13311b679a93500f054b956edfc7063b",
+            "title": "token",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "email_verified",
+            "type": "radio-buttons",
+            "value": "true",
+            "options": [
+              {
+                "value": "true",
+                "checked": 1
+              },
+              {
+                "value": "false",
+                "checked": 0
+              }
+            ],
+            "title": "email_verified",
+            "has_length_edit": false,
+            "parent": false,
+            "object": true,
+            "radio-buttons": true,
+            "options_string": [
+              {
+                "value": "true"
+              },
+              {
+                "value": "false"
+              }
+            ],
+            "children": false
+          }
+        ],
+        "bucket": "5cc33439d1dc85664c27ffe3",
+        "type_slug": "users",
+        "created": "2019-05-23T21:46:37.748Z",
+        "created_at": "2019-05-23T21:46:37.748Z",
+        "modified_at": "2019-05-23T21:46:37.748Z",
+        "user_id": null,
+        "status": "published",
+        "locale": null,
+        "published_at": "2019-05-23T21:46:37.748Z",
+        "order": null
+      },
+      {
+        "_id": "5ce70ee8f9b302543bfadb07",
+        "slug": "pfdbisdaqcom",
+        "title": "pfdb@isdaq.com",
+        "content": "",
+        "metafields": [
+          {
+            "value": "anew usea",
+            "key": "full_name",
+            "title": "full_name",
+            "type": "text",
+            "children": null
+          },
+          {
+            "value": "pfdb@isdaq.com",
+            "key": "email",
+            "title": "email",
+            "type": "text",
+            "children": null
+          },
+          {
+            "value": "pbkdf2$10000$82ead9d7170c81d39ecbd0087311ebacf3f4012c54aafb2babd34b30b9f6509abe81c0733b68fbdc6f8e88b0ff6051d70134326885b237904fb6d3bc92b8f49f$75eba3ce9cafdaa420ae06cf7b26b48861e930bb04571ef8dea1d030a211ed4af0acfb3cd08e5cea7e6b97fc7915006f13dd8f2bdba106007cf73fecb55d802e",
+            "key": "password",
+            "title": "password",
+            "type": "text",
+            "children": null
+          },
+          {
+            "value": "659c215d78b6b435fd9217c0571d00930452a6c2435d265a3e5c11111f03eea4",
+            "key": "token",
+            "title": "token",
+            "type": "text",
+            "children": null
+          },
+          {
+            "options": [
+              {
+                "value": "true"
+              },
+              {
+                "value": "false"
+              }
+            ],
+            "value": false,
+            "key": "email_verified",
+            "title": "email_verified",
+            "type": "radio-buttons",
+            "children": null
+          },
+          {
+            "value": "",
+            "key": "reset_token",
+            "title": "Reset Token",
+            "type": "text",
+            "children": null
+          }
+        ],
+        "bucket": "5cc33439d1dc85664c27ffe3",
+        "type_slug": "users",
+        "created": "2019-05-23T21:21:44.620Z",
+        "created_at": "2019-05-23T21:21:44.620Z",
+        "modified_at": "2019-05-23T21:45:25.798Z",
+        "user_id": null,
+        "status": "published",
+        "locale": null,
+        "published_at": "2019-05-23T21:45:25.798Z",
+        "modified_by": "5a86424c597e406715286ea5",
+        "options": {
+          "content_editor": 1,
+          "slug_field": 1
+        },
+        "publish_at": null
+      },
+      {
+        "_id": "5ce6f872f9b302543bfadaef",
+        "slug": "lqpdoopendnsro",
+        "title": "lqpd@o.opendns.ro",
+        "content": "",
+        "metafields": [
+          {
+            "value": "anew user",
+            "key": "full_name",
+            "title": "full_name",
+            "type": "text",
+            "children": null
+          },
+          {
+            "value": "lqpd@o.opendns.ro",
+            "key": "email",
+            "title": "email",
+            "type": "text",
+            "children": null
+          },
+          {
+            "value": "pbkdf2$10000$0645da0679ee2d4447a29dedda7639153701de3d70c02627ff1a62e2cef921d5c44daf76b3c83faab230768ff669b04de191dd26edf2847a940250198c5ec9b5$3a1fae9ced5237d66d1ce420a228c37e3842c574b83980393eaca76ed5c8325c5e90f88248741f6df5196eb23408e0233e9f84fea58ac9681b6733c552c77b98",
+            "key": "password",
+            "title": "password",
+            "type": "text",
+            "children": null
+          },
+          {
+            "value": "e231619078ec9d8b9c643059a29c29b24d7cc55fecf62e53efbba66ab16d1113",
+            "key": "token",
+            "title": "token",
+            "type": "text",
+            "children": null
+          },
+          {
+            "options": [
+              {
+                "value": "true"
+              },
+              {
+                "value": "false"
+              }
+            ],
+            "value": true,
+            "key": "email_verified",
+            "title": "email_verified",
+            "type": "radio-buttons",
+            "children": null
+          },
+          {
+            "value": "",
+            "key": "reset_token",
+            "title": "Reset Token",
+            "type": "text",
+            "children": null
+          }
+        ],
+        "bucket": "5cc33439d1dc85664c27ffe3",
+        "type_slug": "users",
+        "created": "2019-05-23T19:45:54.755Z",
+        "created_at": "2019-05-23T19:45:54.755Z",
+        "modified_at": "2019-05-23T20:26:01.875Z",
+        "user_id": null,
+        "status": "published",
+        "locale": null,
+        "published_at": "2019-05-23T20:26:01.875Z",
+        "modified_by": "5a86424c597e406715286ea5",
+        "options": {
+          "content_editor": 1,
+          "slug_field": 1
+        },
+        "publish_at": null
+      },
+      {
+        "_id": "5ce2cd21c9b3db04bb54a20c",
+        "slug": "pvhcmor19uugl",
+        "title": "pvhc@mor19.uu.gl",
+        "content": "",
+        "metafields": [
+          {
+            "key": "email_verified",
+            "type": "radio-buttons",
+            "value": "true",
+            "options": [
+              {
+                "value": "true"
+              },
+              {
+                "value": "false"
+              }
+            ]
+          }
+        ],
+        "bucket": "5cc33439d1dc85664c27ffe3",
+        "type_slug": "users",
+        "created": "2019-05-20T15:52:01.623Z",
+        "created_at": "2019-05-20T15:52:01.623Z",
+        "modified_at": "2019-05-20T20:44:47.622Z",
+        "user_id": null,
+        "status": "published",
+        "locale": null,
+        "published_at": "2019-05-20T20:44:47.622Z",
+        "modified_by": "5a86424c597e406715286ea5",
+        "options": {
+          "content_editor": 1,
+          "slug_field": 1
+        },
+        "publish_at": null,
+        "order": null
+      },
+      {
+        "_id": "5ce2d1337e8e28055266692b",
+        "slug": "hszcrmailfscom",
+        "title": "hszcr@mailfs.com",
+        "content": "",
+        "metafields": [
+          {
+            "key": "full_name",
+            "type": "text",
+            "value": "aaron v",
+            "title": "full_name",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "email",
+            "type": "text",
+            "value": "hszcr@mailfs.com",
+            "title": "email",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "password",
+            "type": "text",
+            "value": "pbkdf2$10000$f9dcf1d0f2fc3eb90b66875b2e24e3f56164f82532f724d75feaba99a27b71a5c452cda479ae6fe89930f11ea9027be41ba9422e77660f92b120c88bea9dccd2$e4a4c37b8eb57be365b9ade1b209d8ae05d7c78f4a85231b76b46fb292efdf1f49000bd2770a0e017064e4eb9a05ab8b8ec1a2358d1060279a59bf1f91beacd6",
+            "title": "password",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "token",
+            "type": "text",
+            "value": "e0ccaa17513c54e3daceee0905f484ba53db39bfa4a369f2854bfad8189a64e9",
+            "title": "token",
+            "has_length_edit": true,
+            "parent": false,
+            "children": false
+          },
+          {
+            "key": "email_verified",
+            "type": "radio-buttons",
+            "value": "true",
+            "options": [
+              {
+                "value": "true",
+                "checked": 1
+              },
+              {
+                "value": "false",
+                "checked": 0
+              }
+            ],
+            "title": "email_verified",
+            "has_length_edit": false,
+            "parent": false,
+            "object": true,
+            "radio-buttons": true,
+            "options_string": [
+              {
+                "value": "true"
+              },
+              {
+                "value": "false"
+              }
+            ],
+            "children": false
+          }
+        ],
+        "bucket": "5cc33439d1dc85664c27ffe3",
+        "type_slug": "users",
+        "created": "2019-05-20T16:09:23.068Z",
+        "created_at": "2019-05-20T16:09:23.068Z",
+        "modified_at": "2019-05-21T22:42:11.790Z",
+        "user_id": null,
+        "status": "published",
+        "locale": null,
+        "published_at": "2019-05-21T22:42:11.790Z",
+        "order": null,
+        "modified_by": "5a86424c597e406715286ea5",
+        "options": {
+          "content_editor": 1,
+          "slug_field": 1
+        },
+        "publish_at": null
+      },
+      {
+        "_id": "5cdcca75475541577259b80e",
+        "slug": "testtestcom",
+        "title": "test@test.com",
+        "content": null,
+        "metafields": [
+          {
+            "key": "full_name",
+            "type": "text",
+            "value": "john test",
+            "title": "full_name"
+          },
+          {
+            "key": "email",
+            "type": "text",
+            "value": "test@test.com",
+            "title": "email"
+          },
+          {
+            "key": "password",
+            "type": "text",
+            "value": "pbkdf2$10000$ae545c80e3509a306b3065c5507708ba68880c34cfc0c7867b16e47a444a4a21730758325cd0037cbf8d38df59fa8785e7ec6e0eb2088d45de7284d23f938acc$0cc45c99b8ccb46c11ae074d2b608ed96dd1e63d4f20ac9b776d6424fe49b90e3d6cc82a17d4af8f26ff8089a41a3dc28245e93c76edd9f747e0654373ec4cfe",
+            "title": "password"
+          },
+          {
+            "key": "token",
+            "type": "text",
+            "value": "387cfc889814943d97cffec6fdcd48e3ef5587c3189a8455a30e72bfcc1a7f43",
+            "title": "token"
+          }
+        ],
+        "bucket": "5cc33439d1dc85664c27ffe3",
+        "type_slug": "Users",
+        "created": "2019-05-16T02:27:01.892Z",
+        "created_at": "2019-05-16T02:27:01.892Z",
+        "modified_at": "2019-05-16T02:27:01.892Z",
+        "user_id": null,
+        "status": "published",
+        "locale": null,
+        "published_at": "2019-05-16T02:27:01.892Z"
+      }
+    ],
+    "media": []
+  }
+}

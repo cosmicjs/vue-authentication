@@ -7,4 +7,4 @@ const database = Cosmic.bucket({
   read_key: 'xDF5EHQ5KgcWdsEc5PxCTLicSuSX839HJejXsg1jJ57ZF1ixVy'
 })
 
-export default database
+module.exports = database

@@ -1,7 +1,15 @@
 const password = require('password-hash-and-salt');
 const crypto = require('crypto');
 const nodemailer = require("nodemailer");
-import database from '../src/cosmic'
+const database = require('../src/cosmic');
+
+const transporter = nodemailer.createTransport({
+   service: 'SendinBlue', // no need to set host or port etc.
+   auth: {
+       user: 'aaronvail14@gmail.com',
+       pass: 'A0EDmTa1f3BhOSVr'
+   }
+});
 
 exports.handler = function(event, context, callback) {
   if (event.httpMethod !== 'POST') {
@@ -81,13 +89,6 @@ exports.handler = function(event, context, callback) {
                 html: `<p>Please Verify your email using this link: <a href="https://v-cosmic-auth.netlify.com/activate-account?token=${data.object.metadata.token}">Click Here</a></p>`
             };
 
-            let transporter = nodemailer.createTransport({
-               service: 'SendinBlue', // no need to set host or port etc.
-               auth: {
-                   user: 'aaronvail14@gmail.com',
-                   pass: 'A0EDmTa1f3BhOSVr'
-               }
-            });
             transporter.sendMail(message).then(res => {
               console.log(res)
               callback(null, {

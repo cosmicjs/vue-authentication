@@ -1,5 +1,5 @@
 const password = require('password-hash-and-salt');
-import database from '../src/cosmic'
+const database = require('../src/cosmic');
 
 exports.handler = function(event, context, callback) {
   if (event.httpMethod != 'POST') {
