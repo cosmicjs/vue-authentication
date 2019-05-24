@@ -18,6 +18,7 @@
 
 <script>
   import axios from 'axios'
+  const API_SERVER = process.env.VUE_APP_API_HOST || "https://v-cosmic-auth.netlify.com/"
   export default {
     data: () => ({
       activated: false
@@ -26,7 +27,7 @@
 
     },
     created () {
-      axios.post(process.env.API_HOST+'.netlify/functions/ConfirmUserEmail', {token: this.$route.query.token})
+      axios.post(API_SERVER+'.netlify/functions/ConfirmUserEmail', {token: this.$route.query.token})
       .then(res => {
         if (res.status == 200) {
           this.activated = true
