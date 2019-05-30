@@ -2,8 +2,10 @@
   <v-app id="app">
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>V</span>
-        <span class="font-weight-light">COSMIC AUTH</span>
+        <router-link to="/">
+          <span>V</span>
+          <span class="font-weight-light">COSMIC AUTH</span>
+        </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn

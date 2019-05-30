@@ -1,29 +1,56 @@
 # v-cosmic-auth
 
-## Project setup
+----
+## Features
+
+- Netlify hosting (plus CDN, Prerendering, Minification, etc..)
+- Vuetify components for interface
+- AWS Lambda functions via Netlify
+- Cosmic JS for Database API
+- Password hashing using PBKDF2 with Salt
+- Email Verification using Nodemailer via SendinBlue
+
+##Needed Improvements
+
+- Password reset function
+- User avatar support
+
+----
+##Prerequisites
+> You will be required to have Node JS and npm before starting. Make sure you already have them installed. If not you can find them here: https://nodejs.org
+
+>In order to deploy you will need a Netlify account.
+Also for SMTP server to send email verification link I am using SendInBlue since they give you 300 free emails a day.
+
+----
+## Usage
+1. Write markdown text in this textarea.
+2. Click 'HTML Preview' button.
+
+#### Clone and install
+`git clone https://github.com/cosmicjs/v-cosmic-auth`
+
 ```
-npm install
+cd v-cosmic-auth && npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#### Integrate DB and SMTP services
+- Add Cosmic JS Bucket Slug, Read key, and Write key to `~/cosmic.js`
+- Add SendInBlue SMTP API Key to `~/functions/CreateNewUser.js`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### Running Locally
+To start AWS Lambda server run:
+`npm run start:lambda`
 
-### Run your tests
-```
-npm run test
-```
+Running the app localhost run:
+`npm run serve`
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### Building for production:
+`npm run build`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+----
+## Thanks
+* [Cosmic JS](https://github.com/evilstreak/markdown-js)
+* [SendInBlue](https://www.sendinblue.com/)
+* [Vuetify](https://vuetifyjs.com/en/)
+* [Netlify Functions](https://www.netlify.com/docs/functions/)
