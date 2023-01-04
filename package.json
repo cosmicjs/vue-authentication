@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
-    "cosmicjs": "^3.2.17",
+    "cosmicjs": "^3.4.4",
     "dotenv-webpack": "^1.7.0",
     "nodemailer": "^6.1.1",
     "password-hash-and-salt": "^0.1.4",
@@ -24,7 +24,7 @@
     "@mdi/font": "^3.6.95",
     "@vue/cli-plugin-babel": "^3.6.0",
     "@vue/cli-plugin-eslint": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
+    "@vue/cli-service": "^5.0.8",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
